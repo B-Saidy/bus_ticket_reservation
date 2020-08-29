@@ -26,7 +26,7 @@
                   <input type="password" name="password" class="form-control" required>
                 </div>
                   {% if request.GET.next %}
-                    <input type="hidden" name='next' value = '{{request.GET.next}}'>
+                    <input type="hidden" name='next' value = {{request.GET.next}}>
                   {% endif %}
                 <input type="submit" value="Login" class="btn btn-info btn-block">
               </form>
