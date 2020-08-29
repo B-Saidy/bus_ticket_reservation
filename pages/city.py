@@ -1,0 +1,16 @@
+Cities = {
+    'KF':'Kanifing',
+    'BR':'Brikama',
+    'BJ':'Banjul',
+    'SK':'Serrekunda',
+    'BA':'Basse',
+    'SM':'Soma',
+    'KR': 'Kaur',
+    'FF':'Farafenni',
+    'KW':'Kerewan',
+    'FT':'Fototo',
+    'AL': 'Amdalai',
+    'BAA': 'Bara',
+    'MK': 'MansaKonko',
+    'BS':'Bansang',
+}

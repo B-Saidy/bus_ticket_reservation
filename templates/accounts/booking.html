@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class='container-fluid'>
+<h2 class='text-center mb-3'>Your Reserved Ticket</h2>
+{% if bookings %}
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Bus No.</th>
+      <th scope="col">Passenger</th>
+      <th scope="col">From City</th>
+      <th scope="col">To City</th>
+      <th scope="col">Dep. Time</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for booking in bookings %}
+    <tr>
+      <th scope='row'>{{booking.bus_no}}</td>
+      <td>{{booking.first_name}} {{booking.last_name}}</td>
+      <td>{{booking.get_from_city_display}}</td>
+      <td>{{booking.get_to_city_display}}</td>
+      <td>{{booking.date}} {{booking.time}}</td>
+      <td class='text-info'>D{{booking.price}}</td>
+      <td><a href="{{booking.get_absolute_url}}"><button class="btn btn-danger">Cancel</button></a></td>
+      <td><a href="{% url 'update' booking.id %}"><button class="btn btn-secondary">Edit</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+  <h2 class='text-center mb-3'>You haven't booked any ticket</h2>
+{% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'admin/base_site.html' %}
+{% load static %}
+
+{% block branding %}
+    <h1 id="header">
+        GTSC
+    </h1>
+{% endblock branding %}
+{% block extrastyle %}
+    <link rel="stylesheet" href= "{% static 'css/admin.css' %}">
+{% endblock extrastyle %}
