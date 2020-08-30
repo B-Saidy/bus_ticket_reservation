@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class='container'>
+{% if buses %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Bus No.</th>
+      <th scope="col">From City</th>
+      <th scope="col">To City</th>
+      <th scope="col">Dep. Time</th>
+      <th scope="col">Seats Remaining</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for bus in buses %}
+    <tr>
+      <th scope='row'>{{bus.bus_no}}</td>
+      <td>{{bus.get_from_city_display}}</td>
+      <td>{{bus.get_to_city_display}}</td>
+      <td>{{bus.date}} {{bus.time}}</td>
+      <td class='text-danger'>{{bus.no_of_seats}}</td>
+      <td class='text-info'>D{{bus.price}}</td>
+      <td><a href=" {{bus.get_absolute_url}} "><button class="btn btn-info">Book Now</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<h2 class='text-center'> Sorry! No bus matches your search.<h2>
+{% endif %}
+</div>
+{% endblock content %}

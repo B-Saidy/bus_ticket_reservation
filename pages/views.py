@@ -6,13 +6,20 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
+
 def home(request):
-    buses = Bus.objects.all()
     context = {
-        'buses': buses,
         'cities':Cities
     }
     return render(request, 'pages/index.html', context)
+
+def routes(request):
+    buses = Bus.objects.filter(no_of_seats__gte=1, date__gte=datetime.today()).order_by('date')
+    context = {
+        'buses': buses,
+    }
+    return render(request, 'pages/routes.html', context)
+
 
 def search_results(request):
     fromcity = request.GET['fromcity']

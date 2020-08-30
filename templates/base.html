@@ -49,6 +49,8 @@
                 {% if user.is_authenticated %}
                 <span class="navbar-brand"><strong>Hi</strong> <small>{{user.username}}!</small></span>
                 {% endif %}
+
+                <a class="navbar-brand" href=" {% url 'routes'%} "><small>All Routes</small></a>
                 <a class="navbar-brand" href=" {% url 'bookings'%} "><small>Your Booking</small></a>
             
               
