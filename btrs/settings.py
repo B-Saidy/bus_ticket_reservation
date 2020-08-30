@@ -25,7 +25,7 @@ SECRET_KEY = '!m4f%)!qg$u=v2l5ky12ua%@($!3u^!xcu@+3!@8y_6wrg*o9t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['busticket-reserve.herokuapp.com', 'localhost']
 
 
 # Application definition
