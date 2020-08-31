@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!m4f%)!qg$u=v2l5ky12ua%@($!3u^!xcu@+3!@8y_6wrg*o9t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = ['busticket-reserve.herokuapp.com', 'localhost']
 
