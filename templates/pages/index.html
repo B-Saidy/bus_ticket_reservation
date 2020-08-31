@@ -7,7 +7,7 @@
 				<div class="grid-container">
 					<div class="grid-item">
 						<div class="form-header">
-							<h1>Find your bus trip</h1>
+							<h1 class="text-center">Search a bus</h1>
 						</div>
 						<form action="{% url 'search' %}">
 							<div class="form-group">
@@ -23,7 +23,7 @@
                               </div>
                               <div class="form-group">
                                 <label for="exampleFormControlSelect1"><strong>To City</strong></label>
-                                <select name='tocity' class="form-control" id="exampleFormControlSelect1">
+                                <select name='tocity' class="form-control" id="exampleFormControlSelect1" required>
 								 <option selected="true" disabled="disabled">To</option>
                                   {% for k,v in cities.items %}
 								  <option value={{k}}>
@@ -36,7 +36,7 @@
 								<div class="col-md-12">
 									<div class="form-group">
                                         <span class="form-label text-dark"><strong>Date</strong></span>
-										<input class="form-control" name="date" type='date' data-date-format="YYYY-MM-DD"/>										
+										<input class="form-control" name="date" type='date' data-date-format="YYYY-MM-DD" required/>										
 									</div>
 								</div>
 							</div>
